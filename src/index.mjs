@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 
+app.use(express.json());
+
 const mockusers = [
     {
         id: 1,
@@ -58,6 +60,7 @@ const mockusers = [
         email: "valleygirl@gmail.com"
     }
 ]
+
 const PORT = process.env.PORT || 3000;
 
 //Query Parameters
@@ -109,6 +112,13 @@ app.get('/api/users/:id', (req, res) => {
 
 });
 
+//Post Request
+app.post("/api/users", (req, res) => {
+    console.log(req.body);
+
+    res.send(200);
+
+})
 
 
 app.get("/", (req, res) => {

@@ -4,8 +4,62 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-//GET Requests
-
+const mockusers = [
+    {
+        id: 1,
+        name: "John Doe",
+        age: 30,
+        email: "john.doe@example.com"
+    },
+    {
+        id: 2,
+        name: "Jane Doe",
+        age: 25,
+        email: "jane.doe@example.com"
+    },
+    {
+        id: 3,
+        name: "John Nope",
+        age: 30,
+        email: "john.nope@example.com"
+    },
+    {
+        id: 4,
+        name: "Jane Nope",
+        age: 25,
+        email: "jane.nope@example.com"
+    },
+    {
+        id: 5,
+        name: "river",
+        age: 21,
+        email: "rivergirl@gmail.com"
+    },
+    {
+        id: 7,
+        name: "lake",
+        age: 22,
+        email: "lakegirl@gmail.com"
+    },
+    {
+        id: 8,
+        name: "ocean",
+        age: 23,
+        email: "oceangirl@gmail.com"
+    },
+    {
+        id: 9,
+        name: "mountain",
+        age: 24,
+        email: "mountaingirl@gmail.com"
+    },
+    {
+        id: 10,
+        name: "valley",
+        age: 25,
+        email: "valleygirl@gmail.com"
+    }
+]
 
 //JSON Response
 // app.get("/", (req, res) => {
@@ -27,6 +81,7 @@ app.get('/api/users', (req, res) => {
 });
 
 //Route Parameters
+//To get user by id: http://localhost:3000/api/users/1
 app.get('/api/users/:id', (req, res) => {
 
     //logs whats id is requested
@@ -55,6 +110,7 @@ app.get('/api/users/:id', (req, res) => {
 });
 
 //Query Parameters
+//To search: http://localhost:3000/api/users?filter=email&value=girl
 app.get('/api/users', (req, res) => {
     console.log(req.query);
 
