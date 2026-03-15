@@ -1,6 +1,6 @@
 import express from "express";
 
-const app = express();
+const app = express();  //parses incoming request bodies in a middleware before your handlers, available under the req.body property.
 
 app.use(express.json());
 
@@ -124,6 +124,12 @@ app.post("/api/users", (req, res) => {
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
+
+//remaining methods
+//PUT
+//PATCH
+//DELETE
+
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
